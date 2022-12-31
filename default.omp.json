@@ -1,0 +1,123 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 2,
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "os",
+                    "style": "diamond",
+                    "foreground": "#ffffff",
+                    "background": "#0077c2",
+                    "leading_diamond": "╭─",
+                    "template": " {{ .Icon }}  ",
+                    "properties": {
+                        "always_enabled": true,
+                        "alpine": "\uf300",
+                        "arch": "\uf303",
+                        "centos": "\uf304",
+                        "debian": "\uf306",
+                        "elementary": "\uf309",
+                        "fedora": "\uf30a",
+                        "gentoo": "\uf30d",
+                        "linux": "\ue712",
+                        "macos": "\ue711",
+                        "manjaro": "\uf312",
+                        "mint": "\uf30f",
+                        "opensuse": "\uf314",
+                        "raspbian": "\uf315",
+                        "ubuntu": "\uf31c",
+                        "windows": "\ue70f"
+                    }
+                },
+                {
+                    "type": "path",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#E4E4E4",
+                    "background": "#444444",
+                    "template": " {{ .Path }} ",
+                    "properties": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#011627",
+                    "background": "#ffeb95",
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
+                        "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
+                        "{{ if gt .Behind 0 }}#C792EA{{ end }}"
+                    ],
+                    "template": " {{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}+{{ .Working.Added }} ~{{ .Working.Modified }} -{{ .Working.Deleted }} {{ end }} ",
+                    "properties": {
+                        "branch_icon": "\ue725 ",
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "node",
+                    "style": "diamond",
+                    "foreground": "#E4E4E4",
+                    "background": "#6ba063",
+                    "leading_diamond": " ",
+                    "trailing_diamond": "",
+                    "template": "\ue718 {{ .Full }}",
+                    "properties": {
+                        "fetch_package_manager": true,
+                        "npm_icon": " <#cc3a3a>\ue5fa</> ",
+                        "yarn_icon": " <#348cba>\ue6a7</>"
+                    }
+                },
+                {
+                  "type": "python",
+                  "style": "diamond",
+                  "foreground": "#E4E4E4",
+                  "background": "#4685b8",
+                  "leading_diamond": " ",
+                  "trailing_diamond": "",
+                  "template": " \uE235 {{ .Venv }} {{ .Full }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#0077c2",
+                    "template": "╰─"
+                },
+                {
+                    "type": "time",
+                    "style": "diamond",
+                    "foreground": "#011627",
+                    "background": "#00c07f",
+                    "background_templates": [
+                        "{{ if gt .Code 0 }}#ff6562{{ end }}"
+                    ],
+                    "leading_diamond": "",
+                    "trailing_diamond": " ",
+                    "template": " \u2665 {{ .CurrentDate | date .Format }} "
+                }
+            ],
+            "newline": true
+        }
+    ],
+    "osc99": true
+}
