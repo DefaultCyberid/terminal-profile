@@ -10,7 +10,6 @@ Import-Module Terminal-Icons
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadlineOption -PredictionViewStyle ListView
 
 # PSFzf
 Import-Module PSFzf
