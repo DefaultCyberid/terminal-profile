@@ -13,8 +13,7 @@ My terminal profile.
    ```
 3. Install [oh-my-posh](https://ohmyposh.dev/).
    ```
-   Install-Module posh-git -Scope CurrentUser -Force
-   Install-Module oh-my-posh -Scope CurrentUser -Force
+   scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
    ```
 4. Install [Terminal-Icons](https://github.com/devblackops/Terminal-Icons).
    ```
