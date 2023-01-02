@@ -10,7 +10,6 @@ My terminal profile.
 2. Install [Scoop](https://scoop.sh/).
    ```
    iwr -useb get.scoop.sh | iex
-   scoop install curl sudo jq
    ```
 3. Install [oh-my-posh](https://ohmyposh.dev/).
    ```
@@ -43,7 +42,7 @@ My terminal profile.
    ```
 3. Install [logo-ls](https://github.com/Yash-Handa/logo-ls).
    ```
-   wget -q https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_Linux_x86_64.tar.gz
+   wget https://github.com/Yash-Handa/logo-ls/releases/download/v1.3.7/logo-ls_Linux_x86_64.tar.gz
    tar zxvf logo-ls_Linux_x86_64.tar.gz
    cd logo-ls_Linux_x86_64/
    sudo install -v logo-ls /usr/local/bin/
