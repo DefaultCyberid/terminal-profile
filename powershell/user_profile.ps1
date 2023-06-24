@@ -15,7 +15,7 @@ Set-PSReadLineOption -PredictionSource History
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-# Which command
+# which command
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
         Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
@@ -23,3 +23,4 @@ function which ($command) {
 
 # Alias
 Set-Alias -Name ll -Value ls
+Set-Alias -Name touch -Value New-Item
